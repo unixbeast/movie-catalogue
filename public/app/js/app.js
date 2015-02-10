@@ -1,0 +1,1 @@
+angular.module('movieApp', [ 'ngResource', 'movieApp.movieController', 'movieApp.addMovieController', 'angularSpinner' ]);

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="resources/angular.js"></script>
+    <script type="text/javascript" src="resources/angular-resource.js"></script>
+    <script type="text/javascript" src="resources/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script type="text/javascript" src="resources/spin.min.js"></script>
+    <script type="text/javascript" src="resources/angular-spinner.min.js"></script>
+
+    <script type="text/javascript" src="app/js/app.js"></script>
+    <script type="text/javascript" src="app/js/movieController.js"></script>
+    <script type="text/javascript" src="app/js/addMovieController.js"></script>
+    <script type="text/javascript" src="app/js/services/movie-rest-services.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body data-ng-app="movieApp">
+    <div id="title">
+        <h1 style="text-align: center">Hastings Movie Collection</h1>
+    </div>
+    <div class="row" style="padding: 5px; margin-top: 20px;" data-ng-controller="movieController">
+        <div class="col-lg-2">
+            <tabset vertical="true" type="pills">
+                <tab data-ng-repeat="tab in data.tabs" data-heading="{{ tab.title }}" active="tab.active" data-ng-click="changeView(tab.index)"></tab>
+            </tabset>
+        </div>
+
+        <div class="col-lg-7" id="mainContentArea" data-ng-include="data.currentTemplate"></div>
+        <div class="col-lg-3" id="searchArea" data-ng-include="data.searchTemplate"></div>
+    </div>
+
+</body>
+</html>

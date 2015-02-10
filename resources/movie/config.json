@@ -1,0 +1,101 @@
+{
+	"type": "Collection",
+	"properties": {
+		"title": {
+			"name": "title",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "title",
+			"order": 0
+		},
+		"genre": {
+			"name": "genre",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "genre",
+			"order": 1
+		},
+		"subgenre": {
+			"name": "subgenre",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "subgenre",
+			"order": 2
+		},
+		"actors": {
+			"name": "actors",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "actors",
+			"order": 3
+		},
+		"year": {
+			"name": "year",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "year",
+			"order": 4
+		},
+		"rated": {
+			"name": "rated",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "rated",
+			"order": 5
+		},
+		"released": {
+			"name": "released",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "released",
+			"order": 6
+		},
+		"runtime": {
+			"name": "runtime",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "runtime",
+			"order": 7
+		},
+		"director": {
+			"name": "director",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "director",
+			"order": 8
+		},
+		"writer": {
+			"name": "writer",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "writer",
+			"order": 9
+		},
+		"plot": {
+			"name": "plot",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "plot",
+			"order": 10
+		},
+		"poster": {
+			"name": "poster",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "poster",
+			"order": 11
+		}
+	}
+}

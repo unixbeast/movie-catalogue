@@ -1,0 +1,32 @@
+<accordion data-close-others="true">
+    <div data-ng-repeat="movie in data.movies | orderBy:'title' | filter:data.search:strict">
+        <accordion-group style="margin-bottom: 10px;" is-open="status.open" data-ng-show="$index >= data.beginIndex && $index <= data.endIndex">
+            <accordion-heading>
+                <div>
+                    {{movie.title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </div>
+            </accordion-heading>
+            <div style="float: right;"><img data-ng-src="{{ movie.poster }}"></div>
+            <div style="float: left; padding-right: 10px;"><p><b>Year:</b> {{ movie.year }}</p></div>
+            <div style="float: left;padding-right: 10px;"><p><b>Released:</b> {{ movie.released }}</p></div>
+            <div><p><b>Rated:</b> {{ movie.rated }}</p></div>
+            <div><p><b>Director:</b> {{ movie.director }}</p></div>
+            <div><p><b>Writers:</b> {{ movie.writer }}</p></div>
+            <div style="float: left; padding-right: 30px;"><p><b>Genre:</b> {{ movie.genre }}</p></div>
+            <div><p><b>Sub Genre:</b> {{ movie.subgenre }}</p></div>
+            <div><b>Length:</b> {{ movie.runtime }}</div>
+            <br/>
+            <div style="width: 50%" class="well"><p>{{ movie.plot }}</p></div>
+            <br/>
+            <div>
+                <div><p><b>Actors:</b></p></div>
+                <div style="float: left; margin: 2px" data-ng-repeat="actor in movie.actors" class="well well-sm">
+                    {{ actor }}
+                </div>
+            </div>
+        </accordion-group>
+    </div>
+    <div data-ng-show="data.movies.length > data.itemsPerPage" style="float: right;">
+        <pagination data-total-items="data.movies.length" data-items-per-page="data.itemsPerPage" data-ng-model="data.currentPage" data-max-size="data.maxSize" class="pagination-sm" data-boundary-links="true" data-rotate="false" data-previous-text="&lsaquo;" data-next-text="&rsaquo;" data-first-text="&laquo;" data-last-text="&raquo;"></pagination>
+    </div>
+</accordion>

@@ -1,0 +1,35 @@
+<div data-ng-controller="addMovieController">
+    <div>
+        <alert ng-repeat="alert in data.alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+
+    <form name="movieForm" data-ng-submit="searchMovie()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" data-ng-model="data.movieTitle" placeholder="Title" required>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <button type="submit" class="btn btn-success">Search Movie</button>
+                <span data-us-spinner data-ng-show="data.showSearchSpinner"></span>
+            </div>
+            <div class="col-xs-10"></div>
+        </div>
+    </form>
+
+    <div style="margin-top: 20px; width: 60%;">
+        <div data-ng-show="data.searchResults.length > 0"><h3>Search Results</h3></div>
+        <div class="row well well-sm" data-ng-repeat="result in data.searchResults">
+            <div class="col-xs-11">
+                <div class="row">
+                    <div class="col-sm-8"><p style="margin: 0px;">{{result.Title}}</div>
+                    <div style="text-align: right;" class="col-sm-4"><p style="margin: 0px;">{{result.Year}}</p></div>
+                </div>
+            </div>
+            <div class="col-xs-1" style="padding-left: 12px;">
+                <button class="btn btn-xs btn-success" data-ng-click="createMovie(result, $index)">+</button>
+                <span data-us-spinner data-ng-show="data.showAddSpinerIndex == $index"></span>
+            </div>
+        </div>
+    </div>
+</div>
